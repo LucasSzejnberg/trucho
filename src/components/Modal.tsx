@@ -43,7 +43,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   const handleButton11Click = () => {
     const fileInput = document.createElement('input');
     fileInput.type = 'file';
-    fileInput.onchange = (event: Event) => handleFileSelect(event as React.ChangeEvent<HTMLInputElement>); // Cambio aquí
+    fileInput.onchange = (event: Event) => handleFileSelect(event as unknown as React.ChangeEvent<HTMLInputElement>); // Conversión a unknown primero
     fileInput.click();
   };
   
